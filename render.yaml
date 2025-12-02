@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: hf-20b-bot
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python hf_20b_bot.py
+    envVars:
+      HF_TOKEN:
+        fromSecret: HF_TOKEN
+      DISCORD_TOKEN:
+        fromSecret: DISCORD_TOKEN
